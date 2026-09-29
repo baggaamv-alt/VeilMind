@@ -1,0 +1,63 @@
+{
+  "id": "velora",
+  "name": "Velora Biologics",
+  "engagement_type": "Manufacturing tech-transfer program recovery",
+  "industry": "Biopharmaceutical manufacturing",
+  "region": "Hyderabad Genome Valley (fictional)",
+  "size": "Early-stage biologics company",
+  "status": "Active",
+  "start_date": "2025-12-01",
+  "end_date": null,
+  "partner": "Mira Castellanos",
+  "client_team": [
+    "Dr. Farhan Siddiqui (CSO)",
+    "Greta Lindholm (VP Manufacturing)"
+  ],
+  "contract_value": "$700k",
+  "notes": [
+    {
+      "date": "2025-12-01",
+      "author": "Mira Castellanos",
+      "text": "Kickoff. Recovering a stalled tech transfer of the company's only product to a contract manufacturer. $700k."
+    },
+    {
+      "date": "2026-01-20",
+      "author": "Isha Kapoor",
+      "text": "Root cause is not process: Dr. Farhan Siddiqui and Greta Lindholm refuse to share batch data with each other's teams after a dispute over the founding patent."
+    },
+    {
+      "date": "2026-03-03",
+      "author": "Mira Castellanos",
+      "text": "Board intervened; Greta departed. Transfer resumed under an interim lead. Our work was mostly mediation."
+    },
+    {
+      "date": "2026-04-14",
+      "author": "Isha Kapoor",
+      "text": "Engagement wrapping. Outcome driven entirely by one interpersonal conflict and a board decision specific to this company."
+    }
+  ],
+  "sensitive_terms": [
+    "Velora",
+    "Farhan Siddiqui",
+    "Siddiqui",
+    "Greta Lindholm",
+    "Lindholm",
+    "Isha Kapoor",
+    "Mira Castellanos",
+    "$700k",
+    "founding patent",
+    "Genome Valley"
+  ],
+  "simulation": {
+    "note": "No generalizable lesson survives anonymization: the only lesson is a specific interpersonal conflict.",
+    "no_safe_lesson": true,
+    "lesson": "NO SAFE LESSON",
+    "category": "org-dynamics",
+    "approach": "mediation",
+    "outcome": "mixed",
+    "why": "Outcome driven by a single interpersonal dispute; any lesson specific enough to be useful would identify the parties.",
+    "conditions": "",
+    "scale": "",
+    "rarity": "unusual"
+  }
+}

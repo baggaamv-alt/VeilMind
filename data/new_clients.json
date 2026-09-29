@@ -1,0 +1,6 @@
+[
+  {"id": "ridgeway", "name": "Ridgeway Freight Rail (new client)", "sector": "Rail freight", "challenge": "Replacing a legacy dispatch and crew-scheduling system used across many depots, with dozens of integrations to yard, billing and safety systems."},
+  {"id": "aster", "name": "Aster Community Hospital Group (new client)", "sector": "Healthcare", "challenge": "Merging patient scheduling onto one platform after acquiring two clinics."},
+  {"id": "cobalt", "name": "Cobalt Mutual (new client)", "sector": "Insurance", "challenge": "Choosing and implementing a new policy administration platform."},
+  {"id": "juniper", "name": "Juniper Outdoor Co. (new client)", "sector": "Retail", "challenge": "Considering a subscription membership with member-only pricing."}
+]

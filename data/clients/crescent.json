@@ -1,0 +1,61 @@
+{
+  "id": "crescent",
+  "name": "Crescent Metro Transit Authority",
+  "engagement_type": "Fare collection system procurement",
+  "industry": "Public transit",
+  "region": "Mid-Atlantic (fictional)",
+  "size": "Mid-sized metro agency",
+  "status": "Active",
+  "start_date": "2025-05-12",
+  "end_date": null,
+  "partner": "Chloe Nakamura",
+  "client_team": [
+    "Rosalind Achebe (General Manager)",
+    "Victor Lam (Procurement Director)"
+  ],
+  "contract_value": "$950k",
+  "notes": [
+    {
+      "date": "2025-05-12",
+      "author": "Chloe Nakamura",
+      "text": "Kickoff with Rosalind Achebe. Supporting procurement of an account-based fare system. $950k advisory engagement."
+    },
+    {
+      "date": "2025-08-04",
+      "author": "Tariq Hassan",
+      "text": "Award recommended. Losing bidder filed a formal bid protest within 48 hours alleging inconsistent scoring between evaluators."
+    },
+    {
+      "date": "2025-10-20",
+      "author": "Tariq Hassan",
+      "text": "Protest review found two evaluators' score sheets lacked written justification. Contract frozen for 5 months. Victor Lam: \"Our paperwork was the weak point, not our decision.\""
+    },
+    {
+      "date": "2026-03-16",
+      "author": "Chloe Nakamura",
+      "text": "Protest dismissed after re-scoring with contemporaneous written rationale. Award stands. Unusual situation; first protest in the agency's history."
+    }
+  ],
+  "sensitive_terms": [
+    "Crescent",
+    "Rosalind Achebe",
+    "Achebe",
+    "Victor Lam",
+    "Tariq Hassan",
+    "Chloe Nakamura",
+    "$950k",
+    "paperwork was the weak point",
+    "Mid-Atlantic"
+  ],
+  "simulation": {
+    "note": "Unusual single-engagement pattern: passes the leak check but is held back until a second unrelated engagement shows the same pattern.",
+    "lesson": "In competitive public procurements, require every evaluator to record a short written justification for each score at the time of scoring. Consensus decisions without contemporaneous rationale are the most common point of failure when a losing bidder challenges an award, and can freeze a contract for months even when the underlying decision was sound.",
+    "category": "public-procurement",
+    "approach": "documented-evaluation",
+    "outcome": "worked",
+    "why": "Bid challenges succeed on process gaps, not on the merit of the decision.",
+    "conditions": "Competitive public-sector procurement with formal challenge rights.",
+    "scale": "Mid-sized procurement",
+    "rarity": "unusual"
+  }
+}

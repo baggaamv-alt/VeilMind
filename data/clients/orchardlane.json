@@ -1,0 +1,66 @@
+{
+  "id": "orchardlane",
+  "name": "Orchard Lane Mutual Insurance",
+  "engagement_type": "Claims platform vendor selection & implementation",
+  "industry": "Property & casualty insurance",
+  "region": "Northeast (fictional)",
+  "size": "Mid-sized mutual insurer",
+  "status": "Active",
+  "start_date": "2025-04-07",
+  "end_date": null,
+  "partner": "Chloe Nakamura",
+  "client_team": [
+    "Frank Bellweather (COO)",
+    "Irene Szabo (Claims VP)"
+  ],
+  "contract_value": "$2.3M",
+  "notes": [
+    {
+      "date": "2025-04-07",
+      "author": "Chloe Nakamura",
+      "text": "Kickoff with Frank Bellweather. Selecting a SaaS claims platform to replace a mainframe system. Irene Szabo insists the new platform replicate 140+ existing claims workflows exactly."
+    },
+    {
+      "date": "2025-06-09",
+      "author": "Hugo Lambert",
+      "text": "Vendor selected. To meet Irene's requirement, 60% of the configuration budget went into custom code extensions rather than standard configuration."
+    },
+    {
+      "date": "2025-09-15",
+      "author": "Hugo Lambert",
+      "text": "Vendor released a major platform upgrade; 34 of our custom extensions broke. Upgrade blocked. Remediation estimate $480k."
+    },
+    {
+      "date": "2025-11-03",
+      "author": "Chloe Nakamura",
+      "text": "Frank ordered a workflow rationalization: 140 workflows reduced to 38 using vendor-standard patterns. Irene reluctantly agreed after adjusters said half the old workflows were workarounds for mainframe limits."
+    },
+    {
+      "date": "2026-02-16",
+      "author": "Hugo Lambert",
+      "text": "Re-implemented on standard configuration. Upgrades now apply cleanly. Frank: \"We paid twice for the same system.\""
+    }
+  ],
+  "sensitive_terms": [
+    "Orchard Lane",
+    "Frank Bellweather",
+    "Bellweather",
+    "Irene Szabo",
+    "Szabo",
+    "Hugo Lambert",
+    "Chloe Nakamura",
+    "$2.3M",
+    "$480k",
+    "paid twice"
+  ],
+  "simulation": {
+    "lesson": "When adopting a packaged or SaaS platform, heavily customizing it to replicate legacy workflows backfires: custom extensions break on vendor upgrades and the organization ends up paying twice. Rationalizing workflows to fit the platform's standard patterns first — many legacy steps turn out to be workarounds for old system limits — gives a sustainable result.",
+    "category": "vendor-selection",
+    "approach": "heavy-customization",
+    "outcome": "failed",
+    "why": "Custom code on a vendor platform accumulates upgrade debt; many legacy workflows only exist because of old system constraints.",
+    "conditions": "Packaged/SaaS platform with frequent vendor releases, strong pressure to replicate legacy processes.",
+    "scale": "Mid-sized implementation",
+    "rarity": "common"
+  }
+}

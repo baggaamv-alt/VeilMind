@@ -1,0 +1,66 @@
+{
+  "id": "bluefin",
+  "name": "Bluefin Retail Group",
+  "engagement_type": "Pricing & loyalty program redesign",
+  "industry": "Specialty apparel retail",
+  "region": "National (fictional)",
+  "size": "~300 stores",
+  "status": "Active",
+  "start_date": "2025-08-04",
+  "end_date": null,
+  "partner": "Chloe Nakamura",
+  "client_team": [
+    "Marcus Delgado (CMO)",
+    "Priya Raman (Head of Analytics)"
+  ],
+  "contract_value": "$1.1M",
+  "notes": [
+    {
+      "date": "2025-08-04",
+      "author": "Chloe Nakamura",
+      "text": "Kickoff with Marcus Delgado. Leadership wants to replace the points-based loyalty program with tiered member pricing nationwide in one launch before holiday. Budget $1.1M."
+    },
+    {
+      "date": "2025-09-01",
+      "author": "Owen Park",
+      "text": "Priya Raman's team found that 18% of revenue comes from members who only redeem points during clearance. Tiered pricing could alienate them. No way to predict response from historical data alone."
+    },
+    {
+      "date": "2025-09-22",
+      "author": "Chloe Nakamura",
+      "text": "Convinced Marcus to test first: 3 matched test regions vs 3 control regions for 8 weeks, with a pre-agreed kill metric (member churn above 4%)."
+    },
+    {
+      "date": "2025-11-24",
+      "author": "Owen Park",
+      "text": "Test results: tiered pricing lifted member spend 6% but churn among clearance-only members hit 9% in one region. Adjusted design to keep a points track for that segment."
+    },
+    {
+      "date": "2026-01-26",
+      "author": "Chloe Nakamura",
+      "text": "Revised hybrid program rolled out nationally. Churn within target. Marcus: \"The test saved us from a very public mistake.\""
+    }
+  ],
+  "sensitive_terms": [
+    "Bluefin",
+    "Marcus Delgado",
+    "Delgado",
+    "Priya Raman",
+    "Raman",
+    "Chloe Nakamura",
+    "Owen Park",
+    "$1.1M",
+    "300 stores",
+    "very public mistake"
+  ],
+  "simulation": {
+    "lesson": "Before rolling out a major customer-facing pricing or loyalty change everywhere, run a controlled test in matched regions against control regions with a kill metric agreed in advance. Historical data often cannot predict how a specific customer segment will react; a bounded test reveals the at-risk segment early enough to redesign rather than reverse a public launch.",
+    "category": "pricing-strategy",
+    "approach": "controlled-pilot",
+    "outcome": "worked",
+    "why": "Segment reactions are hard to model; a pre-agreed kill metric turns a risky launch into a reversible experiment.",
+    "conditions": "Customer-facing change, heterogeneous customer segments, reputational cost of reversal.",
+    "scale": "National, consumer-facing",
+    "rarity": "common"
+  }
+}

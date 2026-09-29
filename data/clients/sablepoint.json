@@ -1,0 +1,63 @@
+{
+  "id": "sablepoint",
+  "name": "Sable Point Energy Cooperative",
+  "engagement_type": "OT network segmentation & security program",
+  "industry": "Electric utility",
+  "region": "Coastal Andhra Pradesh (fictional)",
+  "size": "Single generation site + 3 substations",
+  "status": "Active",
+  "start_date": "2025-10-13",
+  "end_date": null,
+  "partner": "Ravi Iyer",
+  "client_team": [
+    "K. Venkataraman (Plant Director)",
+    "Anita Rao (CISO)"
+  ],
+  "contract_value": "₹38 crore",
+  "notes": [
+    {
+      "date": "2025-10-13",
+      "author": "Ravi Iyer",
+      "text": "Kickoff with Anita Rao. Segmenting the OT network at the only nuclear-adjacent substation cluster in coastal Andhra Pradesh. Regulator deadline March 2026. Engagement ₹38 crore."
+    },
+    {
+      "date": "2025-11-24",
+      "author": "Meera Pillai",
+      "text": "Found a flat network: historian servers bridged directly to the corporate LAN. Vendor remote-access modems at 2 substations, undocumented."
+    },
+    {
+      "date": "2026-01-12",
+      "author": "Ravi Iyer",
+      "text": "Segmentation zones designed with operators in the room; unplanned trips avoided by testing firewall rules in monitor-only mode for 3 weeks first."
+    },
+    {
+      "date": "2026-03-09",
+      "author": "Meera Pillai",
+      "text": "Program met the March 2026 regulator deadline. K. Venkataraman: \"First time IT and operators designed something together.\""
+    }
+  ],
+  "sensitive_terms": [
+    "Sable Point",
+    "Venkataraman",
+    "Anita Rao",
+    "Meera Pillai",
+    "Ravi Iyer",
+    "Andhra Pradesh",
+    "₹38 crore",
+    "38 crore",
+    "March 2026",
+    "nuclear-adjacent",
+    "designed something together"
+  ],
+  "simulation": {
+    "note": "Intentionally leaky candidate: demonstrates the independent verifier rejecting a lesson that keeps an identifying industry + location + timing combination.",
+    "lesson": "A mid-sized electric cooperative operating the only nuclear-adjacent substation cluster in coastal Andhra Pradesh met its March 2026 regulator deadline by testing OT firewall rules in monitor-only mode before enforcement, which avoided unplanned trips.",
+    "category": "cybersecurity",
+    "approach": "monitor-mode-first",
+    "outcome": "worked",
+    "why": "Testing rules in monitor-only mode revealed legitimate traffic before enforcement.",
+    "conditions": "Operational technology networks where outages are unacceptable.",
+    "scale": "Single site",
+    "rarity": "common"
+  }
+}

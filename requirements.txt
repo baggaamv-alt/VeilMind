@@ -1,0 +1,6 @@
+# Core (DEMO MODE + dashboard). Pure-Python or wheels available for Windows, macOS (Intel/Apple Silicon) and Linux.
+fastapi>=0.110,<1.0
+uvicorn>=0.29
+pydantic>=2.6,<3
+httpx>=0.27
+python-dotenv>=1.0

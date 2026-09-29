@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veilmind · Dashboard</title>
+  <meta name="description" content="Veilmind dashboard: isolated client memory, distillation, independent leak check and the shared firm playbook." />
+  <link rel="stylesheet" href="/static/vendor/fonts/fonts.css" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+</head>
+<body class="app-body">
+  <div class="page-veil" id="pageVeil" aria-hidden="true"></div>
+    <section class="app" id="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+          <a class="brand small" href="/"><span class="brand-mark" aria-hidden="true"></span><span>Veil<b>mind</b></span></a>
+          <button class="icon-btn sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation"><i data-icon="menu"></i></button>
+        </div>
+        <nav class="side-nav" id="sideNav">
+          <button data-page="overview" class="active"><i class="ni" data-icon="grid"></i>Overview</button>
+          <button data-page="engagements"><i class="ni" data-icon="folders"></i>Engagements</button>
+          <button data-page="architecture"><i class="ni" data-icon="network"></i>Memory architecture</button>
+          <button data-page="pipeline"><i class="ni" data-icon="flow"></i>Learning pipeline</button>
+          <button data-page="playbook"><i class="ni" data-icon="book"></i>Shared playbook</button>
+          <button data-page="consultant"><i class="ni" data-icon="chat"></i>AI consultant</button>
+          <button data-page="lab"><i class="ni" data-icon="shield"></i>Attack lab</button>
+          <button data-page="conflicts"><i class="ni" data-icon="swap"></i>Conflicts</button>
+          <button data-page="metrics"><i class="ni" data-icon="chart"></i>Metrics</button>
+        </nav>
+        <div class="sidebar-foot">
+          <button class="btn btn-ghost btn-sm w-full" data-start-demo><i data-icon="play"></i> Guided demo</button>
+        </div>
+      </aside>
+
+      <div class="app-main">
+
+        <!-- OVERVIEW -->
+        <div class="page active" data-page="overview">
+          <div class="page-head"><div><h2>Overview</h2><p>Live state of the private banks, the shared playbook and the confidentiality audit.</p></div>
+            <div class="page-actions"><button class="btn btn-ghost btn-sm" data-refresh><i data-icon="refresh"></i> Refresh</button></div></div>
+          <div class="kpis" id="kpis"></div>
+          <div class="grid-2 mt">
+            <div class="panel"><div class="panel-head"><h3>Playbook evolution</h3><span class="muted small">lessons & evidence after each pipeline decision</span></div><div id="evolutionChart" class="chart"></div></div>
+            <div class="panel wall-split" id="wallSplit"></div>
+          </div>
+          <div class="grid-2 mt">
+            <div class="panel"><div class="panel-head"><h3>Pipeline decisions</h3><span class="muted small">every closed engagement</span></div><div id="decisionBars"></div></div>
+            <div class="panel"><div class="panel-head"><h3>Recent activity</h3><button class="link-btn" data-goto="metrics">audit →</button></div><ul class="feed" id="activityFeed"></ul></div>
+          </div>
+        </div>
+
+        <!-- ENGAGEMENTS -->
+        <div class="page" data-page="engagements">
+          <div class="page-head"><div><h2>Client engagements</h2><p>Each engagement has its own isolated private bank. Selecting a client shows only that client's information.</p></div>
+            <div class="page-actions"><button class="btn btn-primary btn-sm" id="newEngagementBtn"><i data-icon="plus"></i> New engagement</button></div></div>
+          <div class="eng-layout">
+            <div class="eng-list-wrap">
+              <div class="seg" id="engFilter"><button data-f="all" class="on">All</button><button data-f="Active">Active</button><button data-f="Closed">Closed</button></div>
+              <ul class="eng-list" id="engList"></ul>
+            </div>
+            <div class="panel private-panel" id="engDetail"><div class="empty">Select an engagement to open its private bank.</div></div>
+          </div>
+        </div>
+
+        <!-- ARCHITECTURE -->
+        <div class="page" data-page="architecture">
+          <div class="page-head"><div><h2>Memory architecture</h2><p>Private banks → distillation engine → independent verification gate → shared playbook. Click a client bank to inspect it.</p></div>
+            <div class="page-actions"><button class="btn btn-ghost btn-sm" id="archReplay"><i data-icon="play"></i> Replay flow</button></div></div>
+          <div class="arch-layout">
+            <div class="panel arch-canvas"><svg id="archSvg" viewBox="0 0 1000 560" role="img" aria-label="Network of isolated client banks, distillation engine, verification gate and shared playbook"></svg>
+              <div class="arch-legend"><span><i class="dot cyan"></i>Active bank</span><span><i class="dot violet"></i>Closed → retained</span><span><i class="dot red"></i>Discarded / no safe lesson</span><span><i class="dot amber"></i>Held for corroboration</span></div>
+            </div>
+            <div class="panel arch-side" id="archSide"></div>
+          </div>
+          <div class="grid-3 mt" id="archCards"></div>
+        </div>
+
+        <!-- PIPELINE -->
+        <div class="page" data-page="pipeline">
+          <div class="page-head"><div><h2>Close engagement · learning pipeline</h2><p>Recall → distill one lesson → independent leak check → corroboration gate → retain → conflict scan.</p></div>
+            <div class="page-actions pipe-actions">
+              <select id="pipeClient" aria-label="Engagement to close"></select>
+              <button class="btn btn-primary btn-sm" id="pipeRun">Close engagement &amp; run pipeline</button>
+            </div></div>
+          <div class="panel pipe-panel">
+            <div class="pipe-track" id="pipeTrack"></div>
+            <div class="pipe-rail" id="pipeRail"><span></span></div>
+            <div class="pipe-decision" id="pipeDecision"></div>
+          </div>
+          <div class="review mt" id="pipeReview"></div>
+          <div class="panel mt"><div class="panel-head"><h3>Workflow history</h3><span class="muted small">click a run to reopen it</span></div><div id="wfHistory" class="table-wrap"></div></div>
+        </div>
+
+        <!-- PLAYBOOK -->
+        <div class="page" data-page="playbook">
+          <div class="page-head"><div><h2>Shared firm playbook</h2><p>Verified, generalized lessons only. No client identities, figures, dates or quotes.</p></div>
+            <div class="page-actions"><button class="btn btn-ghost btn-sm" id="inspectShared">Inspect raw shared bank</button></div></div>
+          <div class="filters" id="pbFilters">
+            <input type="search" id="pbSearch" placeholder="Search lessons…" aria-label="Search lessons" />
+            <select id="pbCategory" aria-label="Topic"><option value="">All topics</option></select>
+            <select id="pbApproach" aria-label="Approach"><option value="">All approaches</option></select>
+            <select id="pbOutcome" aria-label="Outcome"><option value="">All outcomes</option></select>
+            <select id="pbStrength" aria-label="Evidence strength"><option value="">Any evidence</option><option>Emerging</option><option>Moderate</option><option>Strong</option></select>
+          </div>
+          <div class="lesson-grid" id="lessonGrid"></div>
+          <div class="panel mt held-panel"><div class="panel-head"><h3>Held back · awaiting corroboration</h3><span class="muted small">passed the leak check but only one engagement shows the pattern — NOT in the shared bank</span></div><div id="heldList"></div></div>
+        </div>
+
+        <!-- CONSULTANT -->
+        <div class="page" data-page="consultant">
+          <div class="page-head"><div><h2>AI consultant</h2><p>Advice for a new client, built from the shared playbook only. Authorized private mode works on the selected client's own bank and nothing else.</p></div></div>
+          <div class="chat-layout">
+            <div class="panel chat-config">
+              <label class="lbl">Memory source</label>
+              <div class="seg" id="chatMode"><button data-m="shared" class="on">Shared playbook</button><button data-m="private">Authorized private</button></div>
+              <div id="chatSharedCfg">
+                <label class="lbl" for="newClientSel">New client</label>
+                <select id="newClientSel"></select>
+                <p class="challenge" id="challenge"></p>
+              </div>
+              <div id="chatPrivateCfg" hidden>
+                <label class="lbl" for="privClientSel">Authorized for client</label>
+                <select id="privClientSel"></select>
+                <p class="muted small">This session can only open this client's bank. Requests for any other bank are refused and logged.</p>
+              </div>
+              <label class="lbl">Try asking</label>
+              <div class="suggest" id="suggest"></div>
+              <button class="btn btn-ghost btn-sm w-full mt-s" id="chatNew">New conversation</button>
+            </div>
+            <div class="panel chat-panel">
+              <div class="chat-src" id="chatSrc"></div>
+              <div class="chat-thread" id="chatThread"></div>
+              <form class="chat-input" id="chatForm"><textarea id="chatText" rows="2" placeholder="Ask about a business challenge…" aria-label="Message"></textarea><button class="btn btn-primary" type="submit">Send</button></form>
+            </div>
+          </div>
+          <div class="panel mt" id="memPanel">
+            <div class="panel-head"><h3>Memory panel · private bank vs shared playbook</h3>
+              <div class="page-actions"><label class="muted small" for="memClientSel">Private bank of</label><select id="memClientSel" style="width:auto;min-width:220px"></select><button class="btn btn-ghost btn-sm" id="memRefresh" aria-label="Refresh"><i data-icon="refresh"></i></button></div></div>
+            <div class="mem-split">
+              <div class="wall-side priv"><h4 id="memPrivTitle">Private bank</h4><p class="muted small" id="memPrivSub"></p><ul class="mem-list" id="memPriv"></ul></div>
+              <div class="wall" aria-hidden="true"></div>
+              <div class="wall-side shar"><h4>Shared playbook bank</h4><p class="muted small" id="memSharedSub"></p><ul class="mem-list" id="memShared"></ul></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB -->
+        <div class="page" data-page="lab">
+          <div class="page-head"><div><h2>Adversarial confidentiality lab</h2><p>Direct and oblique attempts to extract client identities or secrets. Results are the actual observed results of each run.</p></div>
+            <div class="page-actions wrap">
+              <button class="btn btn-primary btn-sm" id="labRunAll">Run entire suite</button>
+              <button class="btn btn-ghost btn-sm" id="labNaive">Run naive baseline</button>
+              <button class="btn btn-ghost btn-sm danger" id="labInject" title="Writes an UNVERIFIED leaky lesson into the shared bank to prove the auditor can fail">Inject fault</button>
+              <button class="btn btn-ghost btn-sm" id="labClear">Clear fault</button>
+            </div></div>
+          <div class="kpis small" id="labKpis"></div>
+          <div class="lab-bar">
+            <div class="seg" id="labFilter"><button data-f="all" class="on">All</button><button data-f="pass">Passed</button><button data-f="fail">Failed</button></div>
+            <div class="seg" id="labTab"><button data-t="tests" class="on">Tests</button><button data-t="log">Audit log</button><button data-t="custom">Custom attack</button></div>
+          </div>
+          <div id="labTests" class="lab-tests"></div>
+          <div id="labLog" class="panel table-wrap" hidden></div>
+          <div id="labCustom" class="panel" hidden>
+            <form id="customForm" class="custom-form">
+              <textarea id="customPrompt" rows="3" placeholder="Write your own extraction attempt…"></textarea>
+              <div class="row"><select id="customMode"><option value="shared">Shared playbook</option><option value="private">Authorized private</option></select><select id="customClient"></select><button class="btn btn-primary btn-sm" type="submit">Run attack</button></div>
+            </form>
+            <div id="customResult"></div>
+          </div>
+        </div>
+
+        <!-- CONFLICTS -->
+        <div class="page" data-page="conflicts">
+          <div class="page-head"><div><h2>Conflict resolution</h2><p>When engagements disagree, the playbook keeps both pieces of evidence and reconciles them into conditional guidance. It doesn't invent a universal rule.</p></div></div>
+          <div id="conflictList"></div>
+        </div>
+
+        <!-- METRICS -->
+        <div class="page" data-page="metrics">
+          <div class="page-head"><div><h2>Metrics</h2><p>Computed from stored records. Illustrative metrics are labeled.</p></div>
+            <div class="page-actions wrap">
+              <button class="btn btn-ghost btn-sm" id="mSeed">Seed synthetic engagements</button>
+              <button class="btn btn-ghost btn-sm danger" id="mReset">Reset data</button>
+              <button class="btn btn-primary btn-sm" id="mCloseAll">Close all remaining engagements</button>
+            </div></div>
+          <div class="grid-2">
+            <div class="panel"><div class="panel-head"><h3>Recommendation quality · held-out client</h3><span class="tag tag-amber">illustrative rubric</span></div><div id="qualityChart" class="chart"></div><p class="muted small" id="qualityNote"></p></div>
+            <div class="panel"><div class="panel-head"><h3>Naive shared memory vs isolated banks</h3><span class="tag" id="cmpTag">same attack set</span></div><div id="cmpBars"></div><p class="muted small" id="cmpNote"></p></div>
+          </div>
+          <div class="grid-2 mt">
+            <div class="panel"><div class="panel-head"><h3>Advice after the first engagement</h3><span class="muted small" id="q1Label"></span></div><div class="advice md" id="qFirst"></div></div>
+            <div class="panel"><div class="panel-head"><h3>Advice now</h3><span class="muted small" id="qNLabel"></span></div><div class="advice md" id="qLast"></div></div>
+          </div>
+          <div class="grid-2 mt">
+            <div class="panel"><div class="panel-head"><h3>Confidentiality audit</h3></div><div id="auditPanel"></div></div>
+            <div class="panel"><div class="panel-head"><h3>Playbook evolution timeline</h3></div><ol class="timeline" id="evoTimeline"></ol></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- guided demo dock -->
+  <div class="demo-dock" id="demoDock" hidden>
+    <div class="demo-progress" id="demoProgress"></div>
+    <div class="demo-body">
+      <div class="demo-text"><span class="demo-step" id="demoStepNo"></span><h4 id="demoTitle"></h4><p id="demoDesc"></p><div class="demo-status" id="demoStatus"></div></div>
+      <div class="demo-ctrl">
+        <button class="btn btn-ghost btn-sm" id="demoPrev">← Prev</button>
+        <button class="btn btn-primary btn-sm" id="demoAct">Run step</button>
+        <button class="btn btn-ghost btn-sm" id="demoNext">Next →</button>
+        <button class="icon-btn" id="demoRestart" title="Restart demo (resets data)" aria-label="Restart demo"><i data-icon="rotate"></i></button>
+        <button class="icon-btn" id="demoClose" title="Close demo" aria-label="Close demo"><i data-icon="x"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal + drawer + toasts -->
+  <div class="modal" id="modal" hidden><div class="modal-card" role="dialog" aria-modal="true"><button class="icon-btn modal-x" data-close aria-label="Close"><i data-icon="x"></i></button><div id="modalBody"></div></div></div>
+  <div class="drawer" id="drawer" hidden><div class="drawer-card"><button class="icon-btn modal-x" data-close aria-label="Close"><i data-icon="x"></i></button><div id="drawerBody"></div></div></div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="/static/vendor/gsap.min.js"></script>
+  <script src="/static/js/core.js"></script>
+  <script src="/static/js/charts.js"></script>
+  <script src="/static/js/viz.js"></script>
+  <script src="/static/js/pages.js"></script>
+  <script src="/static/js/demo.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

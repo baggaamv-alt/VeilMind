@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veilmind</title>
+  <meta name="description" content="Veilmind lets a consulting firm learn from every engagement without leaking one client's confidential details to another." />
+  <link rel="stylesheet" href="/static/vendor/fonts/fonts.css" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+</head>
+<body class="landing-body">
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="page-veil" id="pageVeil" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header class="topnav" id="topnav">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>Veil<b>mind</b></span></a>
+    <nav class="topnav-links">
+      <a href="#how" data-scroll>How it works</a>
+      <a href="#wall" data-scroll>Why it's different</a>
+      <a href="#entry" data-scroll>Demo</a>
+    </nav>
+    <div class="topnav-right">
+      <a class="btn btn-primary btn-sm" href="/app" data-nav>Open dashboard</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-hero>Memory for consulting firms</p>
+        <h1 class="hero-title" aria-label="Your firm learns. Your clients stay private.">
+          <span class="line"><span class="w">Your</span> <span class="w">firm</span> <span class="w">learns.</span></span>
+          <span class="line grad"><span class="w">Your</span> <span class="w">clients</span> <span class="w">stay</span> <span class="w">private.</span></span>
+        </h1>
+        <p class="hero-sub" data-hero>Every client gets a sealed memory. When an engagement closes, Veilmind writes one generalized lesson, an independent check asks whether it could point back to the client, and only then does it join the firm's shared playbook.</p>
+        <div class="hero-cta" data-hero>
+          <a class="btn btn-primary" href="/app" data-nav>Open dashboard <i data-icon="arrow"></i></a>
+          <a class="btn btn-ghost" href="/app?demo=1" data-nav><i data-icon="play"></i> Guided demo</a>
+        </div>
+        <ul class="hero-proof" data-hero>
+          <li><b data-count="engagements">0</b><span>sealed client banks</span></li>
+          <li><b data-count="lessons">0</b><span>verified shared lessons</span></li>
+          <li><b data-count="blocked">0</b><span>lessons stopped at the gate</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual" data-hero-visual aria-label="Diagram: client banks flow through a verification gate into the shared playbook">
+        <svg id="heroFlow" viewBox="0 0 560 440" role="img"></svg>
+        <div class="hero-legend"><span><i class="bar cyan"></i>generalized lesson</span><span><i class="bar red"></i>stopped at gate</span></div>
+      </div>
+    </section>
+
+    <section class="section cabinets" id="cabinets">
+      <div class="section-head">
+        <p class="eyebrow">Two memories</p>
+        <h2 class="split-reveal">Separate what's remembered from what's learned.</h2>
+      </div>
+      <div class="cabinet-grid">
+        <article class="cabinet private stagger-card">
+          <div class="cabinet-head"><span class="lock"><i data-icon="lock"></i></span><div><h3>Private client memory</h3><p>One isolated bank per client</p></div></div>
+          <p class="cabinet-sample mono">"Client A, a regional bank, spent 8 months migrating their core banking system. Big-bang rollout failed twice. Phased, department-by-department rollout worked."</p>
+          <ul class="chips"><li>client names</li><li>people</li><li>exact figures</li><li>dates</li><li>direct quotes</li></ul>
+          <p class="cabinet-foot">Never crosses the wall.</p>
+        </article>
+        <div class="cabinet-arrow" aria-hidden="true"><svg viewBox="0 0 120 24"><path class="track" d="M2 12 H112"/><path class="flowline" d="M2 12 H112"/><path d="M104 5 L114 12 L104 19" class="head"/></svg><span>distill, then verify</span></div>
+        <article class="cabinet shared stagger-card">
+          <div class="cabinet-head"><span class="lock open"><i data-icon="book"></i></span><div><h3>Shared firm playbook</h3><p>Only generalized, verified lessons</p></div></div>
+          <p class="cabinet-sample mono">"For large system migrations with many dependent systems, a phased rollout tends to succeed more often than doing it all at once."</p>
+          <ul class="chips ok"><li>problem type</li><li>approach</li><li>why it worked</li><li>relative scale</li></ul>
+          <p class="cabinet-foot">Useful to every new client. Identifies no one.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section how" id="how">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 class="split-reveal">Remember. Generalize. Verify.</h2>
+      </div>
+      <div class="how-wrap">
+        <div class="how-steps">
+          <article class="how-step"><span class="how-num">01</span><h3>Remember</h3><p>Raw engagement notes are stored only in that client's bank. A session working for one client can't open another client's bank. The request is refused and logged.</p><code>retain(bank_id="client-&lt;id&gt;", content, context, timestamp)</code></article>
+          <article class="how-step"><span class="how-num">02</span><h3>Generalize</h3><p>When the engagement closes, <b>reflect</b> writes exactly one lesson. Names, figures, dates, quotes and identifying combinations are removed, and numbers become relative scale. If nothing useful survives, the answer is <b>NO SAFE LESSON</b>.</p><code>reflect(bank_id="client-&lt;id&gt;", query=DISTILL_PROMPT)</code></article>
+          <article class="how-step"><span class="how-num">03</span><h3>Verify</h3><p>A <b>separate</b> check reads only the lesson text, with no client context, and asks whether someone could tell which client it describes. SAFE lessons are kept, UNSAFE ones are discarded, and rare patterns wait for a second engagement.</p><code>leak_check(lesson) → SAFE | UNSAFE → retain("firm-playbook")</code></article>
+        </div>
+        <div class="how-diagram" aria-hidden="true"><svg id="howDiagram" viewBox="0 0 460 520"></svg></div>
+      </div>
+    </section>
+
+    <section class="section story" id="wall">
+      <div class="section-head">
+        <p class="eyebrow">Why it's different</p>
+        <h2 class="split-reveal">Other tools lock the documents. Veilmind makes sure the shared layer never learns the secret.</h2>
+      </div>
+      <div class="story-grid">
+        <article class="story-card stagger-card"><span class="story-ic"><i data-icon="folders"></i></span><h3>Access walls</h3><p>Permissions, encryption and audit logs sit on top of one store that still holds every client's raw data. Pooling everything into one context is exactly the setup that leaks.</p><span class="tag tag-red">reachable storage</span></article>
+        <article class="story-card stagger-card"><span class="story-ic"><i data-icon="shield"></i></span><h3>Learning walls</h3><p>The shared playbook is a smaller, deliberately scrubbed dataset. Ask it for another client's secrets and there's nothing to give, because the detail was never stored there.</p><span class="tag tag-green">never stored</span></article>
+        <article class="story-card stagger-card"><span class="story-ic"><i data-icon="alert"></i></span><h3>Honest limits</h3><p>This is a prototype. Automated checks reduce risk but <b>don't guarantee</b> confidentiality. Every verdict in the app is the actual result of that check.</p><span class="tag tag-amber">defense in depth</span></article>
+      </div>
+    </section>
+
+    <section class="section entry" id="entry">
+      <div class="entry-card">
+        <div>
+          <p class="eyebrow">Demo</p>
+          <h2 class="split-reveal">The whole story in seven steps.</h2>
+          <p>A new client asks for migration advice. A past engagement closes and its lesson passes the gate. The advice improves. An attempt to extract another client's secrets fails. Then a contradicting engagement changes the shared guidance.</p>
+        </div>
+        <div class="entry-actions">
+          <a class="btn btn-primary" href="/app?demo=1" data-nav><i data-icon="play"></i> Start guided demo</a>
+          <a class="btn btn-ghost" href="/app" data-nav>Open dashboard</a>
+        </div>
+      </div>
+    </section>
+    <footer class="foot"><span class="brand small"><span class="brand-mark" aria-hidden="true"></span><span>Veil<b>mind</b></span></span><span class="muted small">HackwithHyderabad 3.0 · built on Hindsight memory</span></footer>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="/static/vendor/gsap.min.js"></script>
+  <script src="/static/vendor/ScrollTrigger.min.js"></script>
+  <script src="/static/js/core.js"></script>
+  <script src="/static/js/viz.js"></script>
+  <script src="/static/js/landing.js"></script>
+</body>
+</html>

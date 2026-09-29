@@ -1,0 +1,89 @@
+{
+  "id": "halvorsen",
+  "name": "Halvorsen Regional Bank",
+  "engagement_type": "Core banking platform migration",
+  "industry": "Regional retail banking",
+  "region": "Upper Midwest (fictional)",
+  "size": "Approx. 2,400 employees, 118 branches",
+  "status": "Closed",
+  "seed_closed": true,
+  "start_date": "2025-02-03",
+  "end_date": "2025-10-17",
+  "partner": "Mira Castellanos",
+  "client_team": [
+    "Gunnar Halvorsen (CIO)",
+    "Deb Okafor (Head of Retail Ops)",
+    "Paul Lindqvist (Core PMO lead)"
+  ],
+  "contract_value": "$4.2M",
+  "notes": [
+    {
+      "date": "2025-02-03",
+      "author": "Mira Castellanos",
+      "text": "Kickoff with Gunnar Halvorsen and Deb Okafor. Mandate: replace the 1990s core ledger with the new cloud core by Q4. Board approved $4.2M for our part plus $11M vendor budget. Gunnar wants a single cutover weekend: \"one weekend, one pain, done.\""
+    },
+    {
+      "date": "2025-03-10",
+      "author": "Arjun Mehta",
+      "text": "Interface discovery found 212 point-to-point integrations off the old core (card processor, ATM switch, loan origination, three regulatory feeds). Only 140 were documented. Flagged to Paul Lindqvist as the biggest cutover risk."
+    },
+    {
+      "date": "2025-04-26",
+      "author": "Mira Castellanos",
+      "text": "Big-bang cutover rehearsal #1 failed at hour 19: ATM switch reconciliation mismatch of $1.37M in test balances, rollback took 9 hours. Deb Okafor: \"If this happens live, we are on the front page.\""
+    },
+    {
+      "date": "2025-05-24",
+      "author": "Arjun Mehta",
+      "text": "Rehearsal #2 also failed. Loan origination system could not read new account numbers; 38 undocumented batch jobs still pointed at the old ledger. Team morale low; vendor blaming our interface inventory."
+    },
+    {
+      "date": "2025-06-02",
+      "author": "Mira Castellanos",
+      "text": "Steering committee agreed to abandon big-bang. New plan: migrate by product line (savings first, then deposits, cards, loans) with a 6-week parallel run for each wave and a reconciliation dashboard owned by finance."
+    },
+    {
+      "date": "2025-07-19",
+      "author": "Arjun Mehta",
+      "text": "Wave 1 (savings, ~310k accounts) went live. Parallel run caught 2 rounding differences in interest accrual before customers saw them. Zero customer-facing incidents."
+    },
+    {
+      "date": "2025-08-30",
+      "author": "Arjun Mehta",
+      "text": "Waves 2 and 3 complete. Each wave's go/no-go now gated on a green reconciliation dashboard for 10 consecutive business days. Paul says the gate is the reason the business trusts the program again."
+    },
+    {
+      "date": "2025-10-17",
+      "author": "Mira Castellanos",
+      "text": "Loans wave live; old core decommissioned. Program finished 7 weeks later than the original big-bang date but with no customer-facing outage. Gunnar in close-out: \"We should have started phased.\" Engagement closed."
+    }
+  ],
+  "sensitive_terms": [
+    "Halvorsen",
+    "Gunnar",
+    "Deb Okafor",
+    "Okafor",
+    "Paul Lindqvist",
+    "Lindqvist",
+    "Mira Castellanos",
+    "Arjun Mehta",
+    "$4.2M",
+    "$11M",
+    "$1.37M",
+    "212",
+    "118 branches",
+    "one weekend, one pain",
+    "front page",
+    "Upper Midwest"
+  ],
+  "simulation": {
+    "lesson": "For large core-platform migrations with many poorly documented downstream integrations, a phased rollout by business line, with a parallel-run period and an objective reconciliation gate before each wave, succeeds where a single all-at-once cutover repeatedly fails. The underlying cause of failure is hidden integration dependencies that only surface under real load; phasing limits the blast radius and lets each wave expose them safely.",
+    "category": "systems-migration",
+    "approach": "phased-rollout",
+    "outcome": "worked",
+    "why": "Hidden integration dependencies surface under real load; phasing plus a reconciliation gate contains the damage and rebuilds stakeholder trust.",
+    "conditions": "Many downstream integrations, incomplete interface documentation, high cost of customer-facing failure.",
+    "scale": "Large, multi-department rollout",
+    "rarity": "common"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "kestrel",
+  "name": "Kestrel Aerospace Components",
+  "engagement_type": "ERP / MRP replacement",
+  "industry": "Precision aerospace manufacturing",
+  "region": "Southwest (fictional)",
+  "size": "Single plant, ~650 employees",
+  "status": "Active",
+  "start_date": "2025-11-03",
+  "end_date": null,
+  "partner": "Ravi Iyer",
+  "client_team": [
+    "Sandra Kowalczyk (CFO)",
+    "Ben Adeyemi (Plant Manager)",
+    "Julia Marsh (IT Lead)"
+  ],
+  "contract_value": "$1.9M",
+  "notes": [
+    {
+      "date": "2025-11-03",
+      "author": "Ravi Iyer",
+      "text": "Kickoff with Sandra Kowalczyk. Replacing a 20-year-old MRP and finance system at a single, tightly integrated plant. Using the firm's standard phased approach: finance module first, then inventory, then production scheduling. Budget $1.9M."
+    },
+    {
+      "date": "2025-12-15",
+      "author": "Nadia Farouk",
+      "text": "Finance module live on the new ERP while inventory still runs on the old MRP. Nightly sync between the two built as a stopgap."
+    },
+    {
+      "date": "2026-01-19",
+      "author": "Nadia Farouk",
+      "text": "Serious problem: inventory valuations disagree between systems by ~$310k. Every work order touches both inventory and costing, so the sync breaks daily. Two sources of truth; the shop floor has stopped trusting either."
+    },
+    {
+      "date": "2026-02-09",
+      "author": "Ravi Iyer",
+      "text": "Ben Adeyemi escalated: two late shipments to a defense prime traced to MRP/ERP mismatch. Sandra: \"Your phased plan is costing us customers.\" Phased approach is not working here — modules are too interdependent at a single site."
+    },
+    {
+      "date": "2026-02-23",
+      "author": "Ravi Iyer",
+      "text": "Re-planned: roll finance back behind a freeze and move to a single-weekend cutover of all modules, preceded by three full dress rehearsals with real data snapshots and a hard rollback criterion."
+    },
+    {
+      "date": "2026-04-11",
+      "author": "Nadia Farouk",
+      "text": "Dress rehearsals 1-3 complete; rehearsal 3 ran clean in 31 hours. Julia Marsh built a cutover runbook with named owners per step."
+    },
+    {
+      "date": "2026-05-02",
+      "author": "Ravi Iyer",
+      "text": "Cutover weekend succeeded. Plant running on the new ERP Monday morning; zero late shipments in the following 6 weeks. Lesson: phasing assumed modules could live apart, but here they could not."
+    }
+  ],
+  "sensitive_terms": [
+    "Kestrel",
+    "Sandra Kowalczyk",
+    "Kowalczyk",
+    "Ben Adeyemi",
+    "Adeyemi",
+    "Julia Marsh",
+    "Nadia Farouk",
+    "Ravi Iyer",
+    "$1.9M",
+    "$310k",
+    "defense prime",
+    "costing us customers",
+    "650 employees"
+  ],
+  "simulation": {
+    "lesson": "A phased, module-by-module migration can fail badly when the modules are tightly interdependent at a single site: running old and new systems side by side creates two sources of truth that break daily. In that situation a single, well-rehearsed cutover — with several full dress rehearsals on real data snapshots and a hard rollback criterion — worked better than phasing.",
+    "category": "systems-migration",
+    "approach": "phased-rollout",
+    "outcome": "failed",
+    "why": "Tightly coupled modules cannot run apart; interim syncs create conflicting records and erode trust.",
+    "conditions": "Single site, highly interdependent modules, every transaction spans multiple modules.",
+    "scale": "Mid-sized, single-site rollout",
+    "rarity": "common",
+    "alternative_approach": "rehearsed-single-cutover"
+  }
+}

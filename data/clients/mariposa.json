@@ -1,0 +1,80 @@
+{
+  "id": "mariposa",
+  "name": "Mariposa Health Network",
+  "engagement_type": "Electronic health record consolidation",
+  "industry": "Hospital network",
+  "region": "Pacific Northwest (fictional)",
+  "size": "5 hospitals, 40 clinics",
+  "status": "Active",
+  "start_date": "2025-06-16",
+  "end_date": null,
+  "partner": "Mira Castellanos",
+  "client_team": [
+    "Dr. Elaine Voss (CMIO)",
+    "Tomas Reyes (VP IT)",
+    "Nurse Director Abby Chen"
+  ],
+  "contract_value": "$6.1M",
+  "notes": [
+    {
+      "date": "2025-06-16",
+      "author": "Mira Castellanos",
+      "text": "Kickoff with Dr. Elaine Voss and Tomas Reyes. Consolidating three legacy EHRs (acquired hospitals) onto one platform. $6.1M engagement. Executive team wants all 5 hospitals live on the same date for simplicity."
+    },
+    {
+      "date": "2025-07-21",
+      "author": "Leo Brandt",
+      "text": "Data profiling: medication allergy codes use 3 different vocabularies; 9% of allergy records failed automated mapping. Patient-safety risk if migrated all at once without clinical validation."
+    },
+    {
+      "date": "2025-08-18",
+      "author": "Mira Castellanos",
+      "text": "Proposed facility-by-facility rollout starting with the smallest hospital, with clinician champions per unit and a clinical data validation sign-off before each go-live. Dr. Voss backed it; Tomas worried about longer dual licensing costs (~$900k)."
+    },
+    {
+      "date": "2025-10-06",
+      "author": "Leo Brandt",
+      "text": "First hospital live. Champions handled most workflow questions at the elbow. Two order-set issues found and fixed centrally before the next facility."
+    },
+    {
+      "date": "2025-12-01",
+      "author": "Leo Brandt",
+      "text": "Hospitals 2 and 3 live. Allergy mapping error rate down to 0.4% after clinicians validated the mapping tables. Abby Chen: \"The champions made nurses feel heard, not steamrolled.\""
+    },
+    {
+      "date": "2026-02-09",
+      "author": "Mira Castellanos",
+      "text": "Remaining hospitals live. Dual licensing cost overran by ~15% but no reportable patient-safety events linked to the migration. Board satisfied."
+    },
+    {
+      "date": "2026-03-02",
+      "author": "Leo Brandt",
+      "text": "Hypercare complete. Recommend documenting the champion model and validation gate for the firm."
+    }
+  ],
+  "sensitive_terms": [
+    "Mariposa",
+    "Elaine Voss",
+    "Voss",
+    "Tomas Reyes",
+    "Reyes",
+    "Abby Chen",
+    "Leo Brandt",
+    "Mira Castellanos",
+    "$6.1M",
+    "$900k",
+    "5 hospitals",
+    "Pacific Northwest",
+    "steamrolled"
+  ],
+  "simulation": {
+    "lesson": "When consolidating several legacy record systems where data errors carry safety or compliance risk, a site-by-site rollout with frontline champions and a formal data-validation sign-off before each go-live outperforms a simultaneous launch. The extra cost of running old and new systems in parallel for longer is real but is usually smaller than the cost of a data-quality failure at scale.",
+    "category": "systems-migration",
+    "approach": "phased-rollout",
+    "outcome": "worked",
+    "why": "Domain experts validating mapped data per wave catches errors automation misses; champions drive adoption.",
+    "conditions": "Heterogeneous legacy data, high consequence of data errors, frontline user adoption risk.",
+    "scale": "Large, multi-facility rollout",
+    "rarity": "common"
+  }
+}

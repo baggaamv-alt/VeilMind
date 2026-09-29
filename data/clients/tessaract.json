@@ -1,0 +1,83 @@
+{
+  "id": "tessaract",
+  "name": "Tessaract Freight Logistics",
+  "engagement_type": "Warehouse management system replacement",
+  "industry": "Third-party logistics",
+  "region": "Gulf Coast (fictional)",
+  "size": "14 distribution centers",
+  "status": "Active",
+  "start_date": "2025-09-08",
+  "end_date": null,
+  "partner": "Ravi Iyer",
+  "client_team": [
+    "Lorna Whitcombe (COO)",
+    "Dmitri Sokolov (IT Director)",
+    "Hana Pruitt (DC Operations)"
+  ],
+  "contract_value": "$2.8M",
+  "notes": [
+    {
+      "date": "2025-09-08",
+      "author": "Ravi Iyer",
+      "text": "Kickoff with Lorna Whitcombe. Replacing a homegrown WMS across all 14 DCs before peak season. Budget $2.8M. Dmitri Sokolov initially proposed switching all DCs over one long weekend in January."
+    },
+    {
+      "date": "2025-09-29",
+      "author": "Sana Qureshi",
+      "text": "Built an integration dependency map: carrier rating APIs, 3 customer EDI feeds per DC on average, the labor management tool, and a yard system nobody on the current team owns. 61 interfaces total."
+    },
+    {
+      "date": "2025-10-20",
+      "author": "Ravi Iyer",
+      "text": "Recommended wave rollout: pilot at the smallest DC (Beaumont), then 3 waves grouped by shared carrier integrations. Lorna agreed after seeing the dependency map. Hana Pruitt nominated floor supervisors as super-users per DC."
+    },
+    {
+      "date": "2025-11-17",
+      "author": "Sana Qureshi",
+      "text": "Beaumont pilot live. Pick-rate dropped 22% for the first 5 days, then recovered to baseline by day 12. Found that the yard system silently depended on an old nightly file; would have broken all 14 DCs in a big-bang."
+    },
+    {
+      "date": "2026-01-12",
+      "author": "Ravi Iyer",
+      "text": "Wave 1 (4 DCs) live with a 2-week parallel run on inventory counts. Super-user model is working: 80% of floor questions resolved without IT tickets."
+    },
+    {
+      "date": "2026-02-23",
+      "author": "Sana Qureshi",
+      "text": "Wave 2 live. One EDI customer (a large grocer) rejected new ASN format; caught during parallel run, fixed before go-live of the next DC. Dmitri: \"The map paid for itself three times.\""
+    },
+    {
+      "date": "2026-04-06",
+      "author": "Ravi Iyer",
+      "text": "Final wave complete, 3 weeks ahead of revised plan. No shipment SLA breaches during rollout. Recommending close-out once hypercare ends."
+    }
+  ],
+  "sensitive_terms": [
+    "Tessaract",
+    "Lorna Whitcombe",
+    "Whitcombe",
+    "Dmitri Sokolov",
+    "Sokolov",
+    "Hana Pruitt",
+    "Pruitt",
+    "Ravi Iyer",
+    "Sana Qureshi",
+    "Beaumont",
+    "$2.8M",
+    "14 DCs",
+    "14 distribution",
+    "61 interfaces",
+    "paid for itself three times",
+    "Gulf Coast"
+  ],
+  "simulation": {
+    "lesson": "In multi-site operational system replacements, starting with a small pilot site and then rolling out in waves grouped by shared integrations works better than a single cutover. Mapping every integration up front, including ones with no current owner, is what makes the waves safe, and a short parallel run on core records catches external-partner format issues before they spread.",
+    "category": "systems-migration",
+    "approach": "phased-rollout",
+    "outcome": "worked",
+    "why": "A pilot site exposes silent dependencies cheaply; waves grouped by shared integrations prevent one hidden issue from breaking every site.",
+    "conditions": "Multiple sites, many external partner integrations, peak-season operational risk.",
+    "scale": "Multi-site rollout across a large network",
+    "rarity": "common"
+  }
+}

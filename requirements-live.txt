@@ -1,0 +1,2 @@
+# LIVE MODE only (real Hindsight memory). The launcher installs it but DEMO MODE works without it.
+hindsight-client>=0.10.1
